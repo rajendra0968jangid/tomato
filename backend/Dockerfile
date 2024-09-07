@@ -10,6 +10,9 @@ COPY package*.json ./
 # Step 4: Install dependencies
 RUN npm install
 
+# Step 5: Update npm to the latest version
+RUN npm install -g npm@10.8.3
+
 # Step 5: Copy the rest of the project files
 COPY . .
 
