@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: my-vite-app
+    env: docker
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
