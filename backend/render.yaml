@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: my-backend-app
+    env: docker
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
