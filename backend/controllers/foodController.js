@@ -1,10 +1,12 @@
 import foodModel from "../models/foodModel.js";
 import fs from 'fs'
+import getCachedData from "./cacheService.js";
 
 // all food list
 const listFood = async (req, res) => {
     try {
-        const foods = await foodModel.find({})
+        // const foods = await getCachedData();
+        const foods = await getCachedData();
         res.json({ success: true, data: foods })
     } catch (error) {
         console.log(error);
@@ -23,7 +25,7 @@ const addFood = async (req, res) => {
             name: req.body.name,
             description: req.body.description,
             price: req.body.price,
-            category:req.body.category,
+            category: req.body.category,
             image: image_filename,
         })
 
