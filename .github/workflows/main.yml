@@ -26,9 +26,9 @@ jobs:
       - name: Build Docker image
         run: |
           cd frontend
-          docker build -t ghcr.io/${{ github.repository }}/Tomato:latest .
+          docker build -t ghcr.io/${{ github.repository }}/tomato:latest .
 
       # Step 4: Push the Docker image to GitHub Container Registry
       - name: Push Docker image to GitHub Container Registry
         run: |
-          docker push ghcr.io/${{ github.repository }}/Tomato:latest
+          docker push ghcr.io/${{ github.repository }}/tomato:latest
