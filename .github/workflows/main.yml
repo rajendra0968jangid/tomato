@@ -31,4 +31,5 @@ jobs:
       # Step 4: Push the Docker image to GitHub Container Registry
       - name: Push Docker image to GitHub Container Registry
         run: |
+          cd frontend
           docker push ghcr.io/${{ github.repository }}:latest
