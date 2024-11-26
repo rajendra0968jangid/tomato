@@ -32,4 +32,4 @@ jobs:
       - name: run Docker container
         run: |
           docker rm -f ak
-          docker run -d --name ak -p 8000:8000 ghcr.io/${{ github.repository }}:latest
+          docker run -d --name ak -p 4000:4000 ghcr.io/${{ github.repository }}:latest
