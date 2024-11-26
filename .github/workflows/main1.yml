@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       # Step 1: Check out the repository code
@@ -29,6 +29,7 @@ jobs:
           docker build -t ghcr.io/${{ github.repository }}:latest .
 
       # Step 4: Push the Docker image to GitHub Container Registry
-      - name: Push Docker image to GitHub Container Registry
+      - name: run Docker container
         run: |
-          docker push ghcr.io/${{ github.repository }}:latest
+          docker rm -f ak
+          docker run -d --name ak -p 8000:8000 ghcr.io/${{ github.repository }}:latest
